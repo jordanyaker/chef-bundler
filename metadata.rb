@@ -13,6 +13,7 @@ recipe "bundler::pack",    "Package the .gem files required by an application in
 
 # provides chef_gem resource to chef <= 0.10.8 and fixes for chef < 10.12.0
 depends "chef_gem"
+depends "rvm"
 
 supports "debian"
 supports "ubuntu"
