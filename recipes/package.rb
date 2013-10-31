@@ -3,5 +3,9 @@ rvm_shell "run bundle package in app directory" do
   group node[:bundler][:group]  
   
   cwd File.join(node[:bundler][:apps_path], node[:bundler][:app])
-  code %{bundle package}
+
+  command <<-SCRIPT
+  	. /etc/profile.d/rvm.sh;
+  	bundle package
+  SCRIPT
 end
