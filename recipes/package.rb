@@ -1,8 +1,6 @@
-rvm_shell "run bundle package in app directory" do
+rbenv_script "run bundle package in app directory" do
   user node[:bundler][:user]
   group node[:bundler][:group]  
-  
   cwd File.join(node[:bundler][:apps_path], node[:bundler][:app])
-
-  code ". /etc/profile.d/rvm.sh; bundle package"
+  code %{bundle package}
 end
