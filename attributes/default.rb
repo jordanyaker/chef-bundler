@@ -5,4 +5,4 @@ default[:bundler][:bundle_options] = nil
 default[:bundler][:bundle_path] = nil
 default[:bundler][:path] = nil
 default[:bundler][:user] = nil
-default[:bundler][:environment] = 'development'
+default[:bundler][:bundle_env] = nil
