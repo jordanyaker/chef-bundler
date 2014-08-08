@@ -14,6 +14,7 @@ command = "#{node[:bundler][:bundle_command]} install"
 command += " --without #{common_groups}" unless common_groups.empty?
 command += " --deployment" if bundler_deployment
 command += " #{bundle_options}" if bundle_options
+command += " --path #{node[:bundler][:bundle_path]}"
 
 execute command do
   cwd node[:bundler][:path]
