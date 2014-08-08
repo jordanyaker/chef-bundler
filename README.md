@@ -5,9 +5,6 @@ The default recipe installs bundler and this cookbook as the following also adde
     # Executes bundle install at the app_path/app directory
     bundler:install
 
-    # Executes bundle package at the app_path/app directory
-    bundler:pack
-
     # Executes bundle update at the app_path/app directory
     bundler:updates
 
