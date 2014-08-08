@@ -11,7 +11,7 @@ end
 bundle_options = node[:bundler][:bundle_options]
 
 command = "#{node[:bundler][:bundle_command]} install"
-command += " --without #{common_groups}" if common_groups
+command += " --without #{common_groups}" unless common_groups.empty?
 command += " --deployment" if bundler_deployment
 command += " #{bundle_options}" if bundle_options
 
