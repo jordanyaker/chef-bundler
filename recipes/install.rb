@@ -11,8 +11,7 @@ end
 bundle_options = node[:bundler][:bundle_options]
 bundle_env = node[:bundler][:bundle_env]
 
-command = (bundle_env || "")
-command += " #{node[:bundler][:bundle_command]} install"
+command = "#{node[:bundler][:bundle_command]} install"
 command += " --without #{common_groups}" unless common_groups.empty?
 command += " --deployment" if bundler_deployment
 command += " #{bundle_options}" if bundle_options
@@ -21,4 +20,5 @@ command += " --path #{node[:bundler][:bundle_path]}"
 execute command do
   cwd node[:bundler][:path]
   user node[:bundler][:user]
+  environment bundle_env if bundle_env
 end
