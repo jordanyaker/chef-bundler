@@ -18,5 +18,4 @@ command += " #{bundle_options}" if bundle_options
 execute command do
   cwd node[:bundler][:path]
   user node[:bundler][:user]
-  environment node[:bundler][:environment]
 end
